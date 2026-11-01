@@ -1,0 +1,4 @@
+project_phase,total_requests,avg_response_days,overdue_requests,overdue_rate_pct
+Construction,6,5.17,2,33.33
+Design,7,5.71,1,14.29
+Planning,7,4.71,1,14.29

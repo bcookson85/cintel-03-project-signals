@@ -118,6 +118,64 @@ and the logging system works.
 
 **Limitation:** The new feature is a mathematical transformation of the existing error rate, not an independent measurement or new detection capability.
 
+## Custom Application: Project Performance Signals
+
+This project extends the original signal-design example by applying feature engineering to synthetic project request response-time data.
+
+The custom application analyzes 20 fictional requests across Planning, Design, and Construction phases.
+
+### Data and Monitoring Signals
+
+The input dataset is stored in [data/project_responses.csv](data/project_responses.csv).
+
+The application calculates:
+
+- `overdue_flag` — Identifies requests exceeding a seven-day response-time threshold.
+- `days_over_threshold` — Measures how many days a response exceeds the selected threshold.
+- `phase_avg_response_days` — Calculates average response times within each project phase.
+- `overdue_rate_pct` — Calculates the percentage of overdue requests within each phase.
+
+### Run the Custom Application
+
+From the project root, execute:
+
+```powershell
+uv run python -m cintel.project_signals
+```
+
+The pipeline generates:
+
+- [Project Signals](artifacts/project_signals.csv)
+- [Project Phase Summary](artifacts/project_phase_summary.csv)
+
+### Generate the Visualization
+
+```powershell
+uv run python -m cintel.visualize_project
+```
+
+### Results
+
+The custom pipeline successfully analyzed 20 project requests and identified four requests exceeding the selected seven-day threshold, representing 20% of the dataset.
+
+Construction had the highest overdue rate at 33.33%, while Design had the highest average response time at 5.71 days.
+
+Planning contained the longest individual response time of 15 days.
+
+### Results Visualization
+
+![Project Request Response Times](docs/images/project_response_chart.png)
+
+*Figure 1. Response times for 20 synthetic project requests. Red bars identify requests exceeding the seven-day threshold.*
+
+### Interpretation and Limitations
+
+The results demonstrate how multiple derived signals can provide a more informative view of project performance than raw response times alone.
+
+The dataset is synthetic, and the seven-day threshold was selected for instructional purposes. The results do not represent actual organizational performance.
+
+For the complete methodology, results, and interpretation, see the [Project Performance Monitoring Report](docs/index.md).
+
 ## Verification
 
 Run the automated tests:
