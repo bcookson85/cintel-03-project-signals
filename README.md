@@ -96,6 +96,28 @@ A `project.log` file is created in the project root.
 This confirms that the Python pipeline executes
 and the logging system works.
 
+### Technical Experiment: Error Rate Percentage Signal
+
+**Objective:** Evaluate whether expressing the existing error rate as a percentage improves interpretability.
+
+**Original configuration:**
+- The pipeline calculated `error_rate` as errors divided by requests.
+- Results were expressed as decimal values.
+- The dataset contained 10 system metric observations.
+
+**Modification:**
+- Added a new derived column named `error_rate_pct` in `src/cintel/utils_system.py`.
+- Calculated the percentage by dividing errors by requests and multiplying by 100.
+- Preserved the original signal calculations and division-by-zero handling.
+
+**Prediction:** The new column would contain the same underlying error-rate information expressed on a percentage scale, without changing the original measurements.
+
+**Observed results:** The modified pipeline generated the new `error_rate_pct` column successfully. For example, an error rate of 0.025 became 2.5%, and an error rate of approximately 0.01333 became 1.33%.
+
+**Interpretation:** The percentage representation makes error rates easier to communicate while preserving the original information. This experiment demonstrates how a derived feature can improve the interpretability of operational monitoring signals.
+
+**Limitation:** The new feature is a mathematical transformation of the existing error rate, not an independent measurement or new detection capability.
+
 ## Verification
 
 Run the automated tests:
