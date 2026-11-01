@@ -14,19 +14,30 @@
 
 ## Project Overview
 
-Author: Brian Cookson
+**Author:** Brian Cookson
 
-Date: 2026 November
+**Date:** November 2026
 
-This project explores signal design and feature engineering using Python as part of the Continuous Intelligence course at Northwest Missouri State University.
+This project demonstrates signal design and feature engineering using Python and Polars as part of the Continuous Intelligence course at Northwest Missouri State University.
 
-The initial objective is to understand and execute the example signal-design pipeline, which transforms raw system measurements into useful monitoring indicators such as error rate, average latency, and throughput.
+The project builds upon Dr. Denise Case's original system monitoring example, which transforms raw system metrics into monitoring indicators such as error rate, average latency, and throughput.
 
-My proposed customization will apply similar techniques to project performance monitoring, with a focus on developing indicators such as average request response times, overdue-request rates, and response-time trends across project phases.
+### Custom Application: Project Performance Monitoring
 
-The goal is to demonstrate how raw operational data can be transformed into meaningful signals that support performance monitoring and decision-making.
+I developed a custom application that applies these same analytical techniques to project request response times.
 
-The project is configured in [pyproject.toml](pyproject.toml).
+Using a synthetic dataset of 20 project requests across Planning, Design, and Construction, the application calculates several operational performance signals:
+
+- **Overdue Flag:** Identifies requests exceeding a seven-day response-time threshold.
+- **Days Over Threshold:** Measures how many days a request exceeds the selected threshold.
+- **Phase Average Response Time:** Calculates average response times within each project phase.
+- **Overdue Rate:** Measures the percentage of overdue requests within each project phase.
+
+The completed analysis identified four overdue requests, representing 20% of the dataset. Construction recorded the highest overdue rate at 33.33%, while Design had the highest average response time at 5.71 days.
+
+The application generates CSV results and a Matplotlib visualization, with findings and limitations documented in the [Project Performance Monitoring Report](docs/index.md).
+
+Project dependencies and configuration are maintained in [pyproject.toml](pyproject.toml).
 
 ## Data
 
