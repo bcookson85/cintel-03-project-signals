@@ -1,5 +1,8 @@
 """app.py - Reactive marimo app for this project.
 
+Author: Brian Cookson
+Date: 2026-11
+
 Marimo adds reactive controls.
 Every function below is a marimo cell.
 
