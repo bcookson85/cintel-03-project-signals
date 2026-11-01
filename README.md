@@ -1,29 +1,32 @@
-# cintel-03-signal-design
+# cintel-03-project-signals
 
 [![Python 3.14](https://img.shields.io/badge/python-3.14%2B-blue?logo=python)](pyproject.toml)
-[![CI](https://github.com/denisecase/cintel-03-signal-design/actions/workflows/ci-python-zensical.yml/badge.svg)](https://github.com/denisecase/cintel-03-signal-design/actions/workflows/ci-python-zensical.yml)
-[![Documentation](https://img.shields.io/badge/docs-site-blue?logo=github)](https://denisecase.github.io/cintel-03-signal-design/)
+[![CI](https://github.com/bcookson85/cintel-03-project-signals/actions/workflows/ci-python-zensical.yml/badge.svg)](https://github.com/bcookson85/cintel-03-project-signals/actions/workflows/ci-python-zensical.yml)
+[![Documentation](https://img.shields.io/badge/docs-site-blue?logo=github)](https://bcookson85.github.io/cintel-03-project-signals/)
 
 [![uv managed](https://img.shields.io/badge/uv-managed-DE5FE9)](https://docs.astral.sh/uv/)
 [![ty type checked](https://img.shields.io/badge/ty-type_checked-2F80ED)](https://docs.astral.sh/ty/)
 [![Zensical docs](https://img.shields.io/badge/Zensical-docs-purple)](https://zensical.org/)
 [![MIT](https://img.shields.io/badge/license-MIT-yellow.svg)](LICENSE)
 
-> Transform raw system measurements into meaningful monitoring signals.
+> Exploring signal design and feature engineering to transform project performance data into meaningful operational monitoring indicators.
+
 
 ## Project Overview
 
-Author: Denise Case
+Author: Brian Cookson
 
-Date: 2026 October
+Date: 2026 November
 
-This project introduces signal design for continuous intelligence.
+This project explores signal design and feature engineering using Python as part of the Continuous Intelligence course at Northwest Missouri State University.
 
-The goal is to derive useful indicators from raw measurements
-so that system behavior can be interpreted more clearly.
+The initial objective is to understand and execute the example signal-design pipeline, which transforms raw system measurements into useful monitoring indicators such as error rate, average latency, and throughput.
 
-The project is configured in
-[pyproject.toml](pyproject.toml).
+My proposed customization will apply similar techniques to project performance monitoring, with a focus on developing indicators such as average request response times, overdue-request rates, and response-time trends across project phases.
+
+The goal is to demonstrate how raw operational data can be transformed into meaningful signals that support performance monitoring and decision-making.
+
+The project is configured in [pyproject.toml](pyproject.toml).
 
 ## Data
 
@@ -103,7 +106,7 @@ uv run pytest
 
 ## Project Documentation
 
-The [hosted documentation site](https://denisecase.github.io/cintel-03-signal-design/)
+The [hosted documentation site](https://bcookson85.github.io/cintel-03-project-signals/)
 is published using Zensical and GitHub Pages.
 
 The documentation site is used to present the project report,
@@ -116,8 +119,8 @@ This project includes continuous integration and continuous deployment (CI/CD)
 to check project files and publish the docs.
 GitHub Actions include:
 
-- [CI: Python and Documentation Checks](https://github.com/denisecase/cintel-03-signal-design/actions/workflows/ci-python-zensical.yml)
-- [CD: Documentation Deployment](https://github.com/denisecase/cintel-03-signal-design/actions/workflows/deploy-zensical.yml)
+- [CI: Python and Documentation Checks](https://github.com/bcookson85/cintel-03-project-signals/actions/workflows/ci-python-zensical.yml)
+- [CD: Documentation Deployment](https://github.com/bcookson85/cintel-03-project-signals/actions/workflows/deploy-zensical.yml)
 
 ## Developer Reference
 
@@ -202,7 +205,7 @@ testing, documentation, and code quality.
 
 ## Links
 
-- [Hosted Documentation](https://denisecase.github.io/cintel-03-signal-design/)
+- [Hosted Documentation](https://bcookson85.github.io/cintel-03-project-signals/)
 - [Professional Python Workflow Guide](https://denisecase.github.io/pro-analytics-02/)
 - [Citation](CITATION.cff)
 - [License](LICENSE)
